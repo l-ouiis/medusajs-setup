@@ -28,7 +28,7 @@ const CodeSnippets = ({
   return (
     <div className="rounded-lg bg-stone-900">
       <div className="flex gap-2 rounded-t-lg border-b border-b-stone-600 bg-stone-800 px-6 py-4">
-        {snippets.map(snippet => (
+        {snippets.map((snippet) => (
           <div
             className={clsx(
               "text-small rounded-xl border border-transparent px-4 py-2 font-semibold",
@@ -68,8 +68,7 @@ const CodeSnippets = ({
           }}
           code={active.code}
           language={active.language}
-        >
-          {({ style, tokens, getLineProps, getTokenProps }) => (
+          children={({ style, tokens, getLineProps, getTokenProps }) => (
             <pre
               style={{ ...style, background: "transparent", fontSize: "12px" }}
             >
@@ -82,7 +81,7 @@ const CodeSnippets = ({
               ))}
             </pre>
           )}
-        </Highlight>
+        />
       </div>
     </div>
   );
